@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="66" id="KGk-i7-Jjw" customClass="FavoriteCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车系论坛" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdW-7h-gPe">
+                        <rect key="frame" x="60" y="8" width="252" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="4ff-2X-aX1"/>
+                            <constraint firstAttribute="width" constant="252" id="Vg7-CA-c4I"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="为你的爱车找到队伍" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYl-SP-XK9">
+                        <rect key="frame" x="60" y="36" width="252" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="nZi-6e-mVQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forum_icon_auto" translatesAutoresizingMaskIntoConstraints="NO" id="Iui-Zt-ARG">
+                        <rect key="frame" x="8" y="11" width="44" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="44" id="cGK-9h-G9k"/>
+                            <constraint firstAttribute="height" constant="44" id="pgN-tB-EeM"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Iui-Zt-ARG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="2r7-J4-gBv"/>
+                    <constraint firstItem="VYl-SP-XK9" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="7Vy-yE-fD6"/>
+                    <constraint firstItem="HdW-7h-gPe" firstAttribute="leading" secondItem="Iui-Zt-ARG" secondAttribute="trailing" constant="8" id="FDv-9x-wdU"/>
+                    <constraint firstItem="VYl-SP-XK9" firstAttribute="top" secondItem="HdW-7h-gPe" secondAttribute="bottom" constant="7" id="Nvy-uf-b7R"/>
+                    <constraint firstItem="VYl-SP-XK9" firstAttribute="leading" secondItem="Iui-Zt-ARG" secondAttribute="trailing" constant="8" id="TcY-Xd-Yqd"/>
+                    <constraint firstItem="HdW-7h-gPe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Z2G-6t-Vnr"/>
+                    <constraint firstItem="Iui-Zt-ARG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="ung-Sd-4do"/>
+                    <constraint firstAttribute="bottom" secondItem="Iui-Zt-ARG" secondAttribute="bottom" constant="10" id="z67-Af-Mxb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ico" destination="Iui-Zt-ARG" id="K1s-FX-6YC"/>
+                <outlet property="subTitile" destination="VYl-SP-XK9" id="wEW-0B-2OR"/>
+                <outlet property="title" destination="HdW-7h-gPe" id="7Li-me-Zzy"/>
+            </connections>
+            <point key="canvasLocation" x="215" y="222"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="forum_icon_auto" width="33" height="33"/>
+    </resources>
+</document>

@@ -1,0 +1,122 @@
+//
+//  PrefixHeader.pch
+//  Autohome
+//
+//  Created by aoyolo1 on 15/6/3.
+//  Copyright (c) 2015年 游兵. All rights reserved.
+//
+
+#ifndef Autohome_PrefixHeader_pch
+#define Autohome_PrefixHeader_pch
+
+#import "UIView+Extension.h"
+
+#define HeaderViewContentW 60
+#define HeaderScrollViewH 44
+
+//屏幕的高度
+#define kScreenH [UIScreen mainScreen].bounds.size.height
+//屏幕的宽度
+#define kScreenW [UIScreen mainScreen].bounds.size.width
+//随机色
+#define RandomColor [UIColor colorWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:1]
+
+#define RGB(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+
+#define FT(x) [UIFont systemFontOfSize:x]
+
+//头视图的url
+#define HeaderViewURL @"http://app.api.autohome.com.cn/autov4.7/mobile/metadata.ashx?types=newstype%7C0,seriesnews%7C0,piccategory%7C0,videotype%7C0,jingxuan%7C0,dealerscope%7C0,spectestdetail%7C0,seriesclubfilter%7C0,buyorder%7C0,speccompare%7C0"
+
+//正在直播
+#define LivingURL @"http://app.api.autohome.com.cn/autov4.7/news/curprogram-pm1.json"
+
+#define RecommendTableViewURL1(page) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/news/newslist-pm1-c0-nt0-p%zi-s30-l0.json", page]//最新 page是页码
+
+#define RecommendTableViewURL2 @"http://app.api.autohome.com.cn/autov4.7/news/fastnewslist-pm1-b0-l0-s20-lastid0.json"// 快报
+
+#define RecommendTableViewURL3(value) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/news/videolist-pm1-vt%zi-s30-lastid0.json", value]// 视频
+
+#define RecommendTableViewURL4 @"http://app.api.autohome.com.cn/autov4.7/news/newslist-pm1-c0-nt1-p1-s30-l0.json"// 新闻
+
+#define RecommendTableViewURL5(page) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/news/newslist-pm1-c0-nt3-p%zi-s30-l0.json", page]// 评测
+
+#define RecommendTableViewURL6 @"http://app.api.autohome.com.cn/autov4.7/news/newslist-pm1-c0-nt60-p1-s30-l0.json"// 导购
+
+#define RecommendTableViewURL7(id) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/news/newslist-pm1-c%zi-nt2-p1-s30-l0.json", id]// 行情  id为city的id  默认为110100
+
+#define RecommendTableViewURL8 @"http://app.api.autohome.com.cn/autov4.7/news/newslist-pm1-c0-nt82-p1-s30-l0.json"// 用车
+
+#define RecommendTableViewURL9 @"http://app.api.autohome.com.cn/autov4.7/news/newslist-pm1-c0-nt102-p1-s30-l0.json"// 技术
+
+#define RecommendTableViewURL10 @"http://app.api.autohome.com.cn/autov4.7/news/newslist-pm1-c0-nt97-p1-s30-l0.json"// 文化
+
+#define RecommendTableViewURL11 @"http://app.api.autohome.com.cn/autov4.7/news/newslist-pm1-c0-nt107-p1-s30-l0.json"// 改装
+
+#define RecommendTableViewURL12 @"http://app.api.autohome.com.cn/autov4.7/news/newslist-pm1-c0-nt100-p1-s30-l0.json"// 游记
+
+#define RecommendTableViewURL13 @"http://app.api.autohome.com.cn/autov4.7/news/videolist-pm1-vt8-s30-lastid0.json"// 原创视频
+
+#define RecommendTableViewURL14 @"http://app.api.autohome.com.cn/autov4.7/news/shuokelist-pm1-s30-lastid0.json"// 说客
+
+#define AllBrandURL @"http://app.api.autohome.com.cn/autov4.7/news/brandsfastnews-pm1-ts0.json"//全部品牌
+#define AllLevelURL @"http://app.api.autohome.com.cn/autov4.7/news/fastnewslevel-pm1-ts0.json"//全部级别
+
+#define NewsSelectURL(id) [NSString stringWithFormat:@"http://cont.app.autohome.com.cn/autov4.7.6/content/news/newscontent-n%zi-t0-rct1.json", id] //新闻点击的返回数据  %zi表示news 的id
+#define NewsSelectURL1(id) [NSString stringWithFormat:@"http://cont.app.autohome.com.cn/autov4.7/content/news/newsinfo-pm1-i%zi.json", id] //新闻点击的返回数据  %zi表示news 的id
+
+#define FastNewsSelectURL(id) [NSString stringWithFormat:@"http://cont.app.autohome.com.cn/autov4.7/content/News/fastnewscontent-n%zi-lastid0.json", id] //快报cel点击的返回数据  %zi表示news 的id
+
+#define ShuokeSelectURL(id) [NSString stringWithFormat:@"http://cont.app.autohome.com.cn/autov4.7.6/content/news/shuokecontent-a2-pm1-v4.7.6-n%zi-nt0-lz0-p1-fs0-cw320-rct1.json", id]//说客cell点击的返回数据  %zi表示news 的id
+#define ShuokeSelectURL1(id) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/news/shuokeinfo-pm1-n%zi.json", id]//说客cell点击的返回数据  %zi表示news 的id
+
+#define MovieSelectURL(id) [NSString stringWithFormat:@"http://cont.app.autohome.com.cn/autov4.7.6/content/news/videopage-a2-pm1-v4.7.6-vid%zi-night0-showpage1-fs0-cw320-rct1.json", id]//视频cell点击的返回数据  %zi表示news 的id
+#define MovieSelectURL1(id) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/news/videoinfo-pm1-i%zi.json", id]//视频cell点击的返回数据  %zi表示news 的id
+
+#define ImageSelectURL(ss,sp,id,t) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/cars/cardutu-pm1-ss%zi-sp%zi-imgid%zi-p1-s60-cid0-t%zi.json", ss, sp, id, t]//id为ID  ss 和 sp 在news的indexdetail属性中
+
+#define MarketSelectURL(id) [NSString stringWithFormat:@"http://cont.app.autohome.com.cn/autov4.7.6/content/news/newscontent-n%zi-t1-rct1.json", id]//行情cell点击的返回数据  %zi表示news 的id
+
+#define NewsReplyURL(id) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/news/comments-pm1-n%zi-o0-s20-lastid0.json", id]//新闻评论 返回数据  %zi表示news 的id
+#define MovieReplyURL(id) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/news/videocomments-pm1-vi%zi-o0-s20-lastid0.json", id]//视频评论 返回数据  %zi表示Movie 的id
+#define ShuokeReplyURL(id) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/news/shuokecomments-pm1-n%zi-o0-s20-lastid0.json", id]//说客评论 返回数据  %zi表示Shuoke 的id
+
+#define UserMessageURL(nameid) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/User/GetUserInfo.ashx?a=2&pm=1&v=4.7.6&au=&u=%zi&p=1&s=20", nameid] //显示用户信息
+
+#define FastnewsBrushURL(id,levelid) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/news/fastnewslist-pm1-b%zi-l%zi-s20-lastid0.json", id, levelid]//品牌刷选  id表示品牌的id   levelid表示级别levelid
+
+#define BBSJingXuanURL(value,page) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/club/jingxuantopic-pm1-c%zi-p%zi-s30.json", value, page]//精选日报
+
+#define BBSSeePostURL(topicid) [NSString stringWithFormat:@"http://forum.app.autohome.com.cn/autov4.7.6/forum/club/topiccontent-a2-pm1-v4.7.6-t%zi-o0-p1-s20-c1-nt0-fs0-sp0-al0-cw320-rct1.json", topicid]//点击帖子进去看帖返回的数据
+
+#define BBSThemeURL @"http://app.api.autohome.com.cn/autov4.7/club/clubstheme-pm1-st0.json"//主题论坛
+
+#define BBSFavoriteURL(bbsid,type,isEssence,isNewest,page) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/club/topics-pm1-b%zi-bt%@-r%zi-ss0-o%zi-p%zi-s50-qf0.json", bbsid, type, isEssence, isNewest, page]//点击主题论坛进入 返回的数据 bbsid为BBSTheme的bbsid isEssence为1表示精华 isNewest为2 表示最新发布  默认为0  type为bbstype
+
+#define FindCarAllBrandURL @"http://app.api.autohome.com.cn/autov4.7/cars/brands-pm1-ts0.json"//全部车的品牌
+#define FindCarFilterURL @"http://app.api.autohome.com.cn/autov4.7.6/mobile/SearchCarsOptions.ashx?types=level%7C0,country%7C0,price%7C0,structure%7C0,gearbox%7C0,findorder%7C0,displacement%7C0,configs%7C0,fueltype%7C0"//筛选
+
+#define FindCarFilterURL1(mip,map,l,c,b,st,mid,mad,conf,bid,f) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/cars/series-pm1-mip%zi-map%zi-l%zi-c%zi-b%zi-st%zi-mid%f-mad%f-conf%zi-o0-p1-s20-bid%zi-f%zi.json", mip, map, l, c, b, st, mid, mad, conf, bid, f]//bid品牌  mip－map价格 l级别 c国别 b变速箱 st结构 mid－mad排量 f燃料  conf配置
+
+
+#define FindCarDownPriceURL @"http://app.api.autohome.com.cn/autov4.7.6/dealer/pdspecs-pm1-pi440000-c440300-o31-b0-ss0-sp0-p1-s20-l0-minp0-maxp0.json"//降价
+#define FindCar2SCURL @"http://app.api.autohome.com.cn/autov4.7.6/2sc/2scs-pm1-pid440000-c440300-b0-ss0-sp0-l0-o0-minp0-maxp0-minm0-maxm0-mina0-maxa0-f0-p1-s20.json"//找二手车
+
+#define FindCarHotsaleURL(id) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/Dealer/hotsaleseries-pm1-st%zi.json", id]//热销车 id＝0 返回轿车的数据 id＝1返回SUV的数据
+#define FindCarClickBrandURL(seriesid,issale) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/cars/seriesprice-pm1-b%zi-t%zi.json", seriesid, issale] //issale=1表示在售  issale＝2表示全部
+
+#define FindCarClickHotsaleURL(seriesid, issale) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7/cars/seriessummary-pm1-s%zi-t%@-c110100.json?refreshPar=1433313934", seriesid, issale]//issale=0x0010表示停售的数据  为空表示在售
+
+#define ShowCarImageURL(seriesid,specid,categoryid,colorid) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/cars/pics-pm1-ss%zi-sp%zi-cg%zi-cl%zi-p1-s60-ft1.json", seriesid, specid, categoryid, colorid]//图片seriesid  sp为车型 cl为颜色 cg为类型
+
+#define ShowCarDealerURL(seriesid,cityid,o) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/dealer/pddealers-pm1-sp0-ss%zi-c%zi-sc0-p1-s20-o%zi-lon113.870064-lat22.582760.json", seriesid, cityid, o]//经销商 c为城市id o0表示默认排序  o5表示距离最近
+#define ShowCarBBSURL(seriesid) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/club/topics-pm1-b%zi-btc-r0-ss0-o0-p1-s50-qf0.json", seriesid]//论坛
+#define ShowCarKouBeiURL(seriesid) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/alibi/alibispecinfos-pm1-ss%zi.json", seriesid]//口碑
+#define ShowCarExplainURL(seriesid,name) [NSString stringWithFormat:@"http://cont.app.autohome.com.cn/autov4.7.6/content/News/seriesexplain-a2-pm1-v4.7.6-n%zi-lz0-sp0-nt0-sa1-p0-c%@-fs0-cw320.json", seriesid, [name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]//详解 name 表示汽车的型号名字 比如POLO
+#define ShowCarNewsURL(seriesid) [NSString stringWithFormat:@"http://app.api.autohome.com.cn/autov4.7.6/news/seriesnews-pm1-ss%zi-cs10000-c440300-s20-lastid0.json", seriesid]//资讯
+
+#define DiscoverHeaderViewURL @"http://app.api.autohome.com.cn/autov4.7/mobile/appadvert-a2-pm1-sid2.json?refreshPar=1433313934"//头视图的数据
+
+#define DiscoverCellURL @"http://app.api.autohome.com.cn/autov4.7/mobile/functionlist-a2-pm1-v4.7.0-ts635622739073943200.json?refreshPar=1433313934"//cell显示的数据
+
+#endif
